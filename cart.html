@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart | 3Lines Restaurant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script defer>
+        document.addEventListener("DOMContentLoaded", function () {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            function loadCart() {
+                let list = "";
+                let total = 0;
+
+                cart.forEach((item, index) => {
+                    const name = item.name || "Unknown";
+                    const price = item.price || 0;
+                    const quantity = item.quantity || 1;
+                    const request = item.request || "";
+
+                    list += `
+                        <li>
+                            ${quantity}x ${name} - ${(price * quantity).toFixed(3)} BHD
+                            <br><em>${request}</em>
+                            <br><button onclick="removeFromCart(${index})">Remove</button>
+                        </li>
+                    `;
+
+                    total += price * quantity;
+                });
+
+                document.getElementById("cart-list").innerHTML = list || "<li>Your cart is empty.</li>";
+                document.getElementById("cart-total").textContent = total.toFixed(3);
+            }
+
+            window.removeFromCart = function (index) {
+                cart.splice(index, 1);
+                localStorage.setItem("cart", JSON.stringify(cart));
+                loadCart();
+            };
+
+            loadCart();
+        });
+    </script>
+</head>
+<body>
+    <header class="navbar">
+        <img src="images\3line.jpeg" alt="3Lines Logo" class="logo">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="information.html">Information</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Your Cart</h2>
+        <ul id="cart-list"></ul>
+        <h3>Total: <span id="cart-total">0.000</span> BHD</h3>
+
+        <div class="thank-you-message">
+            <h2>Thank you for your order!</h2>
+            <p>Your food will be with you shortly.</p>
+        </div>
+
+        <div class="customer-service">
+            <h3>Need Help with Your Order?</h3>
+            <table border="1" cellpadding="10" cellspacing="0">
+                <tr>
+                    <th>Issue</th>
+                    <th>Contact</th>
+                    <th>Response Time</th>
+                </tr>
+                <tr>
+                    <td>Order Delay / Missing Item</td>
+                    <td>+973 1768 6565 or support@3lines-group.com</td>
+                    <td>Within 2 hours</td>
+                </tr>
+                <tr>
+                    <td>Wrong Order Received</td>
+                    <td>WhatsApp: +973 3344 5566</td>
+                    <td>Immediate</td>
+                </tr>
+                <tr>
+                    <td>Payment Issues</td>
+                    <td>finance@3lines-group.com</td>
+                    <td>1 business day</td>
+                </tr>
+                <tr>
+                    <td>General Feedback or Complaints</td>
+                    <td>feedback@3lines-group.com</td>
+                    <td>Within 24 hours</td>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 3Lines Restaurant. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu | 3Lines Restaurant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header class="navbar">
+        <img src="images/3line.jpeg" alt="3Lines Logo" class="logo">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="information.html">Information</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main><section class="section" id="menu-categories">
+  <h2>Our Menu</h2>
+  <div class="menu-grid">
+
+    <div class="menu-item" onclick="showDetails('offers')">
+      <img src="images/offers.jpg" alt="Offers">
+      <h3>Offers</h3>
+    </div>
+    
+    <div class="menu-item" onclick="showDetails('little-lines')">
+      <img src="images/little-lines.jpg" alt="Little Lines">
+      <h3>Little Lines</h3>
+    </div>
+    
+    <div class="menu-item" onclick="showDetails('burger')">
+      <img src="images/burger.jpg" alt="Burger">
+      <h3>Burger</h3>
+    </div>
+    
+    <div class="menu-item" onclick="showDetails('pasta')">
+      <img src="images/pasta.jpg" alt="Pasta">
+      <h3>Pasta</h3>
+    </div>
+    
+    <div class="menu-item" onclick="showDetails('meals')">
+      <img src="images/meal.jpg" alt="Meals">
+      <h3>Meals</h3>
+    </div>
+    
+    <div class="menu-item" onclick="showDetails('super-saver')">
+      <img src="images/supersaver.jpg" alt="Super Saver">
+      <h3>Super Saver</h3>
+    </div>
+    
+    <div class="menu-item" onclick="showDetails('potato')">
+      <img src="images/potato.jpg" alt="Potato">
+      <h3>Potato</h3>
+    </div>
+    
+    <div class="menu-item" onclick="showDetails('sandwich')">
+      <img src="images/sandwich.jpg" alt="Sandwich">
+      <h3>Sandwich</h3>
+    </div>
+    
+    <div class="menu-item" onclick="showDetails('salad')">
+      <img src="images/salad.jpg" alt="Salad">
+      <h3>Salad</h3>
+    </div>
+    
+    <div class="menu-item" onclick="showDetails('sides')">
+      <img src="images/sides.jpg" alt="Sides">
+      <h3>Sides</h3>
+    </div>
+    
+    <div class="menu-item" onclick="showDetails('desserts')">
+      <img src="images/desert.jpg" alt="Desserts">
+      <h3>Desserts</h3>
+    </div>
+    
+    <div class="menu-item" onclick="showDetails('drinks')">
+      <img src="images/drinks.jpg" alt="Drinks">
+      <h3>Drinks</h3>
+    </div>
+    </div>
+</section>
+    <div id="offers-details" class="detail-section">
+      <span class="detail-close" onclick="closeDetails('offers')">X</span>
+      <h3>Offers - <span id="offers-price">2.000</span> BHD</h3>
+      <p>Tasty Offers made with premium ingredients.</p>
+      Quantity: <input type="number" min="1" value="1" id="offers-qty"><br>
+      <textarea id="offers-req" placeholder="Special Requests..."></textarea><br>
+      <button class="add-to-cart" onclick="addToCart('Offers', 'offers-price', 'offers-qty', 'offers-req')">Add to Cart</button>
+    </div>
+    
+    <div id="little-lines-details" class="detail-section">
+      <span class="detail-close" onclick="closeDetails('little-lines')">X</span>
+      <h3>Little Lines - <span id="little-lines-price">2.000</span> BHD</h3>
+      <p>Tasty Little Lines made with premium ingredients.</p>
+      Quantity: <input type="number" min="1" value="1" id="little-lines-qty"><br>
+      <textarea id="little-lines-req" placeholder="Special Requests..."></textarea><br>
+      <button class="add-to-cart" onclick="addToCart('Little Lines', 'little-lines-price', 'little-lines-qty', 'little-lines-req')">Add to Cart</button>
+    </div>
+    
+    <div id="burger-details" class="detail-section">
+      <span class="detail-close" onclick="closeDetails('burger')">X</span>
+      <h3>Burger - <span id="burger-price">2.000</span> BHD</h3>
+      <p>Tasty Burger made with premium ingredients.</p>
+      Quantity: <input type="number" min="1" value="1" id="burger-qty"><br>
+      <textarea id="burger-req" placeholder="Special Requests..."></textarea><br>
+      <button class="add-to-cart" onclick="addToCart('Burger', 'burger-price', 'burger-qty', 'burger-req')">Add to Cart</button>
+    </div>
+    
+    <div id="pasta-details" class="detail-section">
+      <span class="detail-close" onclick="closeDetails('pasta')">X</span>
+      <h3>Pasta - <span id="pasta-price">2.000</span> BHD</h3>
+      <p>Tasty Pasta made with premium ingredients.</p>
+      Quantity: <input type="number" min="1" value="1" id="pasta-qty"><br>
+      <textarea id="pasta-req" placeholder="Special Requests..."></textarea><br>
+      <button class="add-to-cart" onclick="addToCart('Pasta', 'pasta-price', 'pasta-qty', 'pasta-req')">Add to Cart</button>
+    </div>
+    
+    <div id="meals-details" class="detail-section">
+      <span class="detail-close" onclick="closeDetails('meals')">X</span>
+      <h3>Meals - <span id="meals-price">2.000</span> BHD</h3>
+      <p>Tasty Meals made with premium ingredients.</p>
+      Quantity: <input type="number" min="1" value="1" id="meals-qty"><br>
+      <textarea id="meals-req" placeholder="Special Requests..."></textarea><br>
+      <button class="add-to-cart" onclick="addToCart('Meals', 'meals-price', 'meals-qty', 'meals-req')">Add to Cart</button>
+    </div>
+    
+    <div id="super-saver-details" class="detail-section">
+      <span class="detail-close" onclick="closeDetails('super-saver')">X</span>
+      <h3>Super Saver - <span id="super-saver-price">2.000</span> BHD</h3>
+      <p>Tasty Super Saver made with premium ingredients.</p>
+      Quantity: <input type="number" min="1" value="1" id="super-saver-qty"><br>
+      <textarea id="super-saver-req" placeholder="Special Requests..."></textarea><br>
+      <button class="add-to-cart" onclick="addToCart('Super Saver', 'super-saver-price', 'super-saver-qty', 'super-saver-req')">Add to Cart</button>
+    </div>
+    
+    <div id="potato-details" class="detail-section">
+      <span class="detail-close" onclick="closeDetails('potato')">X</span>
+      <h3>Potato - <span id="potato-price">2.000</span> BHD</h3>
+      <p>Tasty Potato made with premium ingredients.</p>
+      Quantity: <input type="number" min="1" value="1" id="potato-qty"><br>
+      <textarea id="potato-req" placeholder="Special Requests..."></textarea><br>
+      <button class="add-to-cart" onclick="addToCart('Potato', 'potato-price', 'potato-qty', 'potato-req')">Add to Cart</button>
+    </div>
+    
+    <div id="sandwich-details" class="detail-section">
+      <span class="detail-close" onclick="closeDetails('sandwich')">X</span>
+      <h3>Sandwich - <span id="sandwich-price">2.000</span> BHD</h3>
+      <p>Tasty Sandwich made with premium ingredients.</p>
+      Quantity: <input type="number" min="1" value="1" id="sandwich-qty"><br>
+      <textarea id="sandwich-req" placeholder="Special Requests..."></textarea><br>
+      <button class="add-to-cart" onclick="addToCart('Sandwich', 'sandwich-price', 'sandwich-qty', 'sandwich-req')">Add to Cart</button>
+    </div>
+    
+    <div id="salad-details" class="detail-section">
+      <span class="detail-close" onclick="closeDetails('salad')">X</span>
+      <h3>Salad - <span id="salad-price">2.000</span> BHD</h3>
+      <p>Tasty Salad made with premium ingredients.</p>
+      Quantity: <input type="number" min="1" value="1" id="salad-qty"><br>
+      <textarea id="salad-req" placeholder="Special Requests..."></textarea><br>
+      <button class="add-to-cart" onclick="addToCart('Salad', 'salad-price', 'salad-qty', 'salad-req')">Add to Cart</button>
+    </div>
+    
+    <div id="sides-details" class="detail-section">
+      <span class="detail-close" onclick="closeDetails('sides')">X</span>
+      <h3>Sides - <span id="sides-price">2.000</span> BHD</h3>
+      <p>Tasty Sides made with premium ingredients.</p>
+      Quantity: <input type="number" min="1" value="1" id="sides-qty"><br>
+      <textarea id="sides-req" placeholder="Special Requests..."></textarea><br>
+      <button class="add-to-cart" onclick="addToCart('Sides', 'sides-price', 'sides-qty', 'sides-req')">Add to Cart</button>
+    </div>
+    
+    <div id="desserts-details" class="detail-section">
+      <span class="detail-close" onclick="closeDetails('desserts')">X</span>
+      <h3>Desserts - <span id="desserts-price">2.000</span> BHD</h3>
+      <p>Tasty Desserts made with premium ingredients.</p>
+      Quantity: <input type="number" min="1" value="1" id="desserts-qty"><br>
+      <textarea id="desserts-req" placeholder="Special Requests..."></textarea><br>
+      <button class="add-to-cart" onclick="addToCart('Desserts', 'desserts-price', 'desserts-qty', 'desserts-req')">Add to Cart</button>
+    </div>
+    
+    <div id="drinks-details" class="detail-section">
+      <span class="detail-close" onclick="closeDetails('drinks')">X</span>
+      <h3>Drinks - <span id="drinks-price">2.000</span> BHD</h3>
+      <p>Tasty Drinks made with premium ingredients.</p>
+      Quantity: <input type="number" min="1" value="1" id="drinks-qty"><br>
+      <textarea id="drinks-req" placeholder="Special Requests..."></textarea><br>
+      <button class="add-to-cart" onclick="addToCart('Drinks', 'drinks-price', 'drinks-qty', 'drinks-req')">Add to Cart</button>
+    </div>
+    <script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function showDetails(id) {
+  document.getElementById(id + "-details").style.display = "block";
+}
+
+function closeDetails(id) {
+  document.getElementById(id + "-details").style.display = "none";
+}
+
+function addToCart(itemName, priceFieldId, qtyFieldId, reqFieldId) {
+  const price = document.getElementById(priceFieldId).textContent;
+  const qty = document.getElementById(qtyFieldId).value;
+  const req = document.getElementById(reqFieldId).value;
+  cart.push({ name: itemName, price: parseFloat(price), quantity: parseInt(qty), request: req });
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+  alert(`${qty}x ${itemName} added to cart`);
+}
+
+function updateCartCount() {
+  const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const cartCount = document.getElementById("cart-count");
+  if (cartCount) {
+    cartCount.textContent = count;
+  }
+}
+
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  loadCart();
+}
+
+function loadCart() {
+  cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let list = "";
+  let total = 0;
+  cart.forEach((item, index) => {
+    list += `<li>${item.quantity}x ${item.name} - ${item.price.toFixed(3)} BHD
+               <br><em>${item.request}</em>
+               <button onclick="removeFromCart(${index})">Remove</button></li>`;
+    total += item.price * item.quantity;
+  });
+  document.getElementById("cart-list").innerHTML = list;
+  document.getElementById("cart-total").textContent = total.toFixed(3);
+}
+</script></main>
+    <footer class="footer">
+        <p>&copy; 2025 3Lines Restaurant. All rights reserved.</p>
+        
+    </footer>
+</body>
+</html>
+<script>
+console.log("LocalStorage Cart:", localStorage.getItem("cart"));
+</script>
